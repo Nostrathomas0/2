@@ -1,0 +1,22 @@
+CSS:
+table {border-collapse: separate; border-spacing:0; }   /*  separate needed      */
+td { display: inline-block; width: 33% }  /*  Firefox need inline-block + width  */
+td { position: relative; padding: 5ptx;}                 /*  needed to make td move             */
+td { left: 10px; }                        /*  push all 10px                      */
+td:first-child { left: 0px; }             /*  move back first 10px               */
+td:nth-child(3) { left: 20px; }           /*  push 3:rd another extra 10px       */
+td { border: 2px grey; }
+/*  to support older browsers we need a class on the td's we want to push
+    td.col1 { left: 0px; }
+    td.col2 { left: 10px; }
+    td.col3 { left: 20px; }
+*/
+
+HTML:
+<table>
+    <tr>
+        <td class='col1'>Player</td>
+        <td class='col2'>Result</td>
+        <td class='col3'>Average</td>
+    </tr>
+</table>
